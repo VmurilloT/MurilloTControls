@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid VerticalOptions="Start"
+      xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:controls="clr-namespace:MControls"
+      x:Class="MControls.MEntry">
+
+    <Border Padding="10,5,10,5"
+                    BackgroundColor="White"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="10,10,10,10"/>
+        </Border.StrokeShape>
+        <controls:BorderlessEntry VerticalOptions="FillAndExpand"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalTextAlignment="Center"
+                              Text="{Binding Text}"
+                              IsPassword="{Binding IsPassword}"
+                              TextColor="Black"
+                              
+                              x:Name="ImAnEntry">
+        <controls:BorderlessEntry.Margin>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS" Value="20,0,20,0"/>
+                <On Platform="Android" Value="0,10,0,0"/>
+            </OnPlatform>
+        </controls:BorderlessEntry.Margin>
+
+    </controls:BorderlessEntry>
+ 
+    </Border>
+
+    <Label Margin="15,20,10,20"
+           BackgroundColor="White"
+           TextColor="Black"
+           HorizontalOptions="Start"
+           VerticalOptions="Start"
+           x:Name="ImALabel"/>
+
+    <Path x:Name="ImAnIcon"
+          WidthRequest="25"
+          HeightRequest="25"
+          Margin="0,15,10,0"
+          HorizontalOptions="End"
+          VerticalOptions="StartAndExpand"
+          Aspect="Uniform"
+          Stroke="LightGray"/>
+
+</Grid>
